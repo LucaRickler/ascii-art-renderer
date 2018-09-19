@@ -6,8 +6,8 @@ TARGET := bin/runner
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -std=c++0x
-LIB := -pthread -lcursesw
+CFLAGS := -g -Wall -std=c++0x -Wmultichar
+LIB := -pthread -lcursesw 
 INC := -I include
 
 all: $(TARGET)
