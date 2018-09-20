@@ -9,14 +9,14 @@ public:
   virtual ~Buffer();
 
   void ResetZ();
-  void SetPixel(const int& x, const int& y, const float& z, const std::string& c);
+  void SetPixel(const int& x, const int& y, const float& z, const float& c);
 
   bool CompareZ(const int& x, const int& y, const float& z);
 
   const char* Print();
 private:
   float** _zbuffer;
-  std::string** _cbuffer;
+  float** _cbuffer;
 
   int _sizeX;
   int _sizeY;

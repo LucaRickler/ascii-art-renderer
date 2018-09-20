@@ -28,17 +28,6 @@ float frag(const float& x, const float& y, const vec3& v0, const vec3& v1, const
     }
 }
 
-std::string fragShader(const float& z) {
-    if(z < 0.25)
-        return "\u2589";      
-    else if (z < 0.5)
-        return "\u2593";
-    else if (z > 0.75)
-        return "\u2591";
-    else
-        return "\u2592";
-}
-
 int main() {
     setlocale(LC_ALL,"");
     initscr();
@@ -72,7 +61,7 @@ int main() {
                 vec3 pr3 = vec3(rot * p3);
                 float z = frag(i*step + mid, j*step + mid, pr1, pr2, pr3);
                 if (buffer.CompareZ(i,j,z)) {
-                    buffer.SetPixel(i,j,z,fragShader(z));
+                    buffer.SetPixel(i,j,z,z);
                 }
             }
         }
