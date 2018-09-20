@@ -9,9 +9,9 @@ public:
   virtual ~Buffer();
 
   void ResetZ();
-  void SetPixel(int x, int y, float z, const std::string c);
+  void SetPixel(const int& x, const int& y, const float& z, const std::string& c);
 
-  bool CompareZ(int x, int y, float z);
+  bool CompareZ(const int& x, const int& y, const float& z);
 
   const char* Print();
 private:

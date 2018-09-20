@@ -16,7 +16,7 @@ using glm::vec4;
 
 #include <buffer.hpp>
 
-float frag(float x, float y, const vec3& v0, const vec3& v1, const vec3& v2) {
+float frag(const float& x, const float& y, const vec3& v0, const vec3& v1, const vec3& v2) {
     vec3 origin = vec3(x, y, 0);
     static const vec3 dir = vec3(0,0,1);
     vec2 point;
@@ -28,7 +28,7 @@ float frag(float x, float y, const vec3& v0, const vec3& v1, const vec3& v2) {
     }
 }
 
-std::string fragShader(float z) {
+std::string fragShader(const float& z) {
     if(z < 0.25)
         return "\u2589";      
     else if (z < 0.5)
@@ -52,7 +52,6 @@ int main() {
     vec4 p3 = vec4(0.2,0.8,0,0);
 
     const int size = 15;
-    std::string output = "";
 
     float mid = 0.5/(float)size;
     float step = 1.0/(float)size;
