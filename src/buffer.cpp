@@ -1,4 +1,5 @@
 #include <buffer.hpp>
+#include <string>
 
 Buffer::Buffer(int sizeX, int sizeY) {
   this->_sizeX = sizeX;
@@ -60,7 +61,6 @@ const char* Buffer::Print() {
         output += "\u2591";
       else
         output += "\u2592";
-       ;
     }
     output += "\n";
   }

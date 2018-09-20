@@ -1,8 +1,6 @@
 #ifndef BUFFER_HPP
 #define BUFFER_HPP
 
-#include <string>
-
 class Buffer {
 public:
   Buffer(int sizeX, int sizeY);
