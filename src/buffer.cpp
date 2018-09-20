@@ -32,12 +32,10 @@ void Buffer::ResetZ() {
 }
 
 void Buffer::SetPixel(const int& x, const int& y, const float& z, const float& c) {
-  if (x >= 0 && x < this->_sizeX && y >= 0 && y < this->_sizeY) {
-    if (this->_zbuffer[y][x] > z) {
-      this->_zbuffer[y][x] = z;
-      this->_cbuffer[y][x] = c;
-    } 
-  }
+  if (this->CompareZ(x,y,z)) {
+    this->_zbuffer[y][x] = z;
+    this->_cbuffer[y][x] = c;
+  } 
 }
 
 bool Buffer::CompareZ(const int& x, const int& y, const float& z) {
