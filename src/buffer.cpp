@@ -24,7 +24,7 @@ Buffer::~Buffer() {
 
 void Buffer::ResetZ() {
   for (int j = 0; j < this->_sizeY; j++) {
-    for (int i = 0; i < this->_sizeY; i++) {
+    for (int i = 0; i < this->_sizeX; i++) {
       this->_zbuffer[j][i] = 10;
       this->_cbuffer[j][i] = 0;
     }
@@ -48,7 +48,7 @@ bool Buffer::CompareZ(const int& x, const int& y, const float& z) {
 const char* Buffer::Print() {
   std::string output = "";
   for (int j = 0; j < this->_sizeY; j++) {
-    for (int i = 0; i < this->_sizeY; i++) {
+    for (int i = 0; i < this->_sizeX; i++) {
       if (this->_cbuffer[j][i] == 0)
         output += " ";
       else if (this->_cbuffer[j][i] < 0.25)
@@ -60,7 +60,6 @@ const char* Buffer::Print() {
       else
         output += "\u2592";
     }
-    output += "\n";
   }
   return output.c_str();
 }
