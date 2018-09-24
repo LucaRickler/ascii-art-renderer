@@ -23,9 +23,13 @@ Buffer::~Buffer() {
 }
 
 void Buffer::ResetZ() {
+  this->ResetZ(10.0f);
+}
+
+void Buffer::ResetZ(const float& maxz) {
   for (int j = 0; j < this->_sizeY; j++) {
     for (int i = 0; i < this->_sizeX; i++) {
-      this->_zbuffer[j][i] = 10;
+      this->_zbuffer[j][i] = maxz;
       this->_cbuffer[j][i] = 0;
     }
   }
@@ -55,11 +59,12 @@ const char* Buffer::Print() {
         output += "\u2589";      
       else if (this->_cbuffer[j][i] < 0.5)
         output += "\u2593";
-      else if (this->_cbuffer[j][i] > 0.75)
-        output += "\u2591";
-      else
+      else if (this->_cbuffer[j][i] < 0.75)
         output += "\u2592";
+      else
+        output += "\u2591";
     }
+    //output += "\n";
   }
   return output.c_str();
 }
