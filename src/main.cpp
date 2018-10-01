@@ -15,7 +15,7 @@ using glm::vec3;
 using glm::vec4;
 using glm::mat4;
 
-#include <buffer.hpp>
+#include <termg.hpp>
 
 float frag(const float& x, const float& y, const vec3& v0, const vec3& v1, const vec3& v2) {
     vec3 origin = vec3(x, y, 0);

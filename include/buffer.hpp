@@ -1,6 +1,8 @@
 #ifndef BUFFER_HPP
 #define BUFFER_HPP
 
+#include <termg.hpp>
+
 class Buffer {
 public:
   Buffer(int sizeX, int sizeY);

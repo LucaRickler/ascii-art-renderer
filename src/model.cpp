@@ -1,4 +1,6 @@
 #include <model.hpp>
+#include <vertex.hpp>
+#include <tri.hpp>
 
 Model::Model() {
 

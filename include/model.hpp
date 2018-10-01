@@ -1,9 +1,9 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include <termg.hpp>
+
 #include <iterator>
-#include <vertex.hpp>
-#include <tri.hpp>
 
 
 class Model  {

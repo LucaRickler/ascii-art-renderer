@@ -1,7 +1,7 @@
 #ifndef TRI_HPP
 #define TRI_HPP
 
-#include <vertex.hpp>
+#include <termg.hpp>
 
 struct Tri {
   Vertex *v0, *v1, *v2;
