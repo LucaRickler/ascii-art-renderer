@@ -5,8 +5,18 @@
 
 struct Vertex {
   glm::vec4 pos;
-  glm::vec4 color;
-  glm::vec4 normal;
+  glm::vec3 color;
+  glm::vec3 normal;
+  Vertex() : Vertex(
+    glm::vec4(0,0,0,1),
+    glm::vec3(0,0,0),
+    glm::vec3(0,0,0)
+    ) {}
+  Vertex(glm::vec4 pos, glm::vec3 color, glm::vec3 normal) {
+    this->pos = pos;
+    this->color = color;
+    this->normal = normal;
+  }
 };
 
 #endif
